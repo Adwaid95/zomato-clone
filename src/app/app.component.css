@@ -1,0 +1,8 @@
+.header{
+    background-color: lightblue;
+    display: block;
+    color: white;
+    font-size: 26px;
+    font-style: italic;
+    padding: 3%;
+}

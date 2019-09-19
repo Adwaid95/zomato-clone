@@ -1,0 +1,13 @@
+.header-seperator{
+    height: 2px;
+    width: 90px;
+    background-color:lightblue;
+}
+
+.review-seperator{
+    height: 1px;
+    width: 190px;
+    background-color: #d9d9d9;
+}
+
+  

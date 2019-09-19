@@ -1,0 +1,53 @@
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+            <h4>Hi Foodie! Check out Restaurants in {{restaurantCity}} </h4>
+            <form class="card card-sm" #getAllRestaurants="ngForm">
+                <div class="col-auto">
+                    <input class="form-control form-control-md form-control-borderless" type="search" name="restaurants" placeholder="Search Restaurants"
+                        value="{{selectedFromRestaurants.restaurant?.name}}" #box (keyup)="onKey($event)">
+
+                    <div class="col-auto">
+                        <div (click)="selectAllRestaurants(selectedRestaurant)" *ngFor="let selectedRestaurant of allRestaurants">
+                            {{ selectedRestaurant?.restaurant?.name }},{{ selectedRestaurant?.restaurant?.location?.locality}}
+                        </div>
+                    </div>
+                    <a [routerLink]="['/restaurant-view']">
+                        <button class="btn btn-sm btn-success" type="submit">Search</button>
+                    </a>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row row-margin-bottom wrap-body">
+        <div (click)="selectAllRestaurants(restaurant)" *ngFor="let restaurant of restaurantList">
+            <div class="col-md-12 no-padding lib-item" data-category="view">
+                <div class="lib-panel">
+                    <div class="row box-shadow">
+                        <div class="col-md-6">
+
+                            <img [src]=restaurant.restaurant.photos[0].photo.url/>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="lib-row lib-header">
+                                {{ restaurant.restaurant.name }}
+                                <div class="lib-header-seperator"></div>
+                            </div>
+                            <div class="lib-row lib-desc">
+                                Cuisines: {{ restaurant.restaurant.cuisines }}
+                                <div class="list-space"></div>
+                                Timings:{{ restaurant.restaurant.timings }}
+                                <div class="list-space"></div>
+                                Average Cost For Two:{{ restaurant.restaurant.average_cost_for_two }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

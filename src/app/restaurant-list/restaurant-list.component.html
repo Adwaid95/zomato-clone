@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row justify-content-center">
+
+        <h2>
+            <u>{{restaurantName}}</u>
+        </h2>
+
+        <div class="col-md-12">
+
+            <h4>Address</h4>
+            <div class="header-seperator"></div>
+            {{restaurantAddress?.address}}
+
+            <h4>Rating</h4>
+            <div class="header-seperator"></div>
+            {{restaurantRating?.aggregate_rating}}
+
+            <h4>Reviews</h4>
+            <div class="header-seperator"></div>
+            <div *ngFor="let selreview of restaurantReview">
+                Rating: {{selreview.review.rating}} | Review: {{selreview.review.review_text}}
+                <div class="review-seperator"></div>
+            </div>
+        
+        </div>
+    </div>
+</div>
